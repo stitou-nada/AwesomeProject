@@ -1,11 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Table from './component/table';
 
 export default function App() {
+
+  const[name, setname]= useState("nada");
+  const[age, setAge]= useState("21");
+
+  const handlePress=()=>{
+        alert('hello')
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text></Text>
+      <Button onPress={handlePress} title='Click'></Button>
       <StatusBar style="auto" />
+      <Table name={name} />
+      <Table name={age} />
     </View>
   );
 }
